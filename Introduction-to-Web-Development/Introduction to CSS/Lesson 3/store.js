@@ -1,5 +1,5 @@
 if (document.readyState == "loading") {
-    document.addEventListener("DOMContentLoaded", ready);
+    document.addEventListener('DOMContentLoaded', ready);
 } else {
     ready();
 }
@@ -41,7 +41,8 @@ function removeCartItem(event) {
 function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var title = shopItem.getElementsByClassName
+    ('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     console.log(title, price, imageSrc)
@@ -50,8 +51,8 @@ function addToCartClicked(event) {
 
 function addItemToCart(title, price, imageSrc) {
     var cartRow = document.createElement('div')
-    cartRow.innerText = title
-    var cartItems = document. getElementsByClassName('cart-item')[0]
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartRowContents = ` 
     <div class="cart-item cart-column">
                         <img class="cart-item-image" src="Images/Shirt.png" width="100" height="100">
